@@ -7,18 +7,21 @@
 </head>
 <body>
 
+<!-- 메뉴 버튼 -->
+<div class="menu-toggle" onclick="toggleSidebar()">☰ 메뉴</div>
+
 <div class="container">
-  <nav class="sidebar">
+  <nav class="sidebar" id="sidebar">
     <h2>메뉴</h2>
     <ul>
-      <li><a href="#basic-info">기본 정보</a></li>
-      <li><a href="#skills">기술 스택</a></li>
-      <li><a href="#experience">경험</a></li>
-      <li><a href="#portfolio">포트폴리오</a></li>
+      <li><a href="#basic-info" onclick="closeSidebar()">기본 정보</a></li>
+      <li><a href="#skills" onclick="closeSidebar()">기술 스택</a></li>
+      <li><a href="#experience" onclick="closeSidebar()">경험</a></li>
+      <li><a href="#portfolio" onclick="closeSidebar()">포트폴리오</a></li>
     </ul>
   </nav>
 
-  <div class="content">
+  <div class="content" id="content">
     <section id="basic-info">
       <h2>기본 정보</h2>
       <p>이름: 정현오<br>
@@ -51,6 +54,32 @@
     </section>
   </div>
 </div>
+
+<script>
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+  }
+
+  function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('open');
+  }
+
+  // 스크롤 시 메뉴 활성화
+  window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section');
+    const menuLinks = document.querySelectorAll('.sidebar a');
+
+    sections.forEach((section, index) => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionBottom = section.offsetTop + section.offsetHeight;
+
+      if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+        menuLinks.forEach(link => link.classList.remove('active'));
+        menuLinks[index].classList.add('active');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
