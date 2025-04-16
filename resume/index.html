@@ -2,84 +2,67 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jung hyeon o / FX - resume</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="page-top">
 
-<!-- 메뉴 버튼 -->
-<div class="menu-toggle" onclick="toggleSidebar()">☰ 메뉴</div>
-
-<div class="container">
-  <nav class="sidebar" id="sidebar">
-    <h2>메뉴</h2>
-    <ul>
-      <li><a href="#basic-info" onclick="closeSidebar()">기본 정보</a></li>
-      <li><a href="#skills" onclick="closeSidebar()">기술 스택</a></li>
-      <li><a href="#experience" onclick="closeSidebar()">경험</a></li>
-      <li><a href="#portfolio" onclick="closeSidebar()">포트폴리오</a></li>
-    </ul>
+  <!-- 네비게이션 바 -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="nav-link" href="#basic-info">기본 정보</a>
+      <a class="nav-link" href="#skills">기술 스택</a>
+      <a class="nav-link" href="#experience">경험</a>
+      <a class="nav-link" href="#portfolio">작업물</a>
+    </div>
   </nav>
 
-  <div class="content" id="content">
-    <section id="basic-info">
+  <!-- 페이지 콘텐츠 -->
+  <section id="basic-info" class="resume-section">
+    <div class="container">
       <h2>기본 정보</h2>
-      <p>이름: 정현오<br>
-         희망 직무: FX 아티스트<br>
-         전공: 컴퓨터소프트웨어공학과<br>
-         관심 분야: FX 연출 (물, 불, 바람, 폭파, 연기, 붕괴), 물리 기반 시뮬레이션</p>
-    </section>
-
-    <section id="skills">
-      <h2>기술 스택</h2>
-      <p>3D 프로그램: Houdini, Maya, TouchDesigner</p>
-      <p>렌더러 프로그램: Vray</p>
-      <p>합성 프로그램: Nuke</p>
-    </section>
-
-    <section id="experience">
-      <h2>경험</h2>
-      <p>- 마야,브이레이,누크를 이용해 라이팅 작업 <br>
-         - 터치디자이너로 실시간 입자 시뮬레이션 <br>
-         - 후디니로 간단한 3D 시뮬레이션 및 렌더링<br>
-         - 후디니의 vex 스크립트언어로 알고리즘 디자인</p>
-    </section>
-
-    <section id="portfolio">
-      <h2>포트폴리오</h2>
       <p>
-        <a href="https://github.com/hyeon-oo/SproutTest.git">식물 관리 앱 (Sprout 프로젝트)</a><br>
-        <a href="https://yourusername.github.io/houdini-showcase">Houdini 작품 모음</a>
+        이름: 정현오<br>
+        희망 직무: FX 아티스트<br>
+        전공: 컴퓨터소프트웨어공학과<br>
+        관심 분야: FX 연출 (물, 불, 바람, 폭파, 연기, 붕괴), 물리 기반 시뮬레이션
       </p>
-    </section>
-  </div>
-</div>
+    </div>
+  </section>
 
-<script>
-  function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('open');
-  }
+  <section id="skills" class="resume-section">
+    <div class="container">
+      <h2>기술 스택</h2>
+      <p>
+        3D 프로그램: Houdini, Maya, TouchDesigner<br>
+        렌더러 프로그램: Vray<br>
+        합성 프로그램: Nuke
+      </p>
+    </div>
+  </section>
 
-  function closeSidebar() {
-    document.getElementById('sidebar').classList.remove('open');
-  }
+  <section id="experience" class="resume-section">
+    <div class="container">
+      <h2>경험</h2>
+      <p>
+        - 마야, 브이레이, 누크를 이용해 라이팅 작업<br>
+        - 터치디자이너로 실시간 입자 시뮬레이션<br>
+        - 후디니로 간단한 3D 시뮬레이션 및 렌더링<br>
+        - 후디니의 VEX 스크립트언어로 알고리즘 디자인
+      </p>
+    </div>
+  </section>
 
-  // 스크롤 시 메뉴 활성화
-  window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section');
-    const menuLinks = document.querySelectorAll('.sidebar a');
+  <section id="portfolio" class="resume-section">
+    <div class="container">
+      <h2>작업물</h2>
+      <p>
+        <!-- 작업물 내용(예: 포트폴리오 링크, 이미지 등) 추가 -->
+      </p>
+    </div>
+  </section>
 
-    sections.forEach((section, index) => {
-      const sectionTop = section.offsetTop - 100;
-      const sectionBottom = section.offsetTop + section.offsetHeight;
-
-      if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-        menuLinks.forEach(link => link.classList.remove('active'));
-        menuLinks[index].classList.add('active');
-      }
-    });
-  });
-</script>
-
+  <script src="scripts.js"></script>
 </body>
 </html>
