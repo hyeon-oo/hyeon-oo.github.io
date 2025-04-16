@@ -1,13 +1,54 @@
 body {
-    font-family: 'Arial', sans-serif;
-    padding: 20px;
-  }
-  nav a {
-    margin-right: 20px;
-    text-decoration: none;
-    color: blue;
-  }
-  section {
-    margin-top: 50px;
-  }
-  
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  display: flex;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+  width: 200px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+}
+
+.sidebar a:hover {
+  color: #007BFF;
+}
+
+/* 내용 스타일 */
+.content {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+.content section {
+  margin-bottom: 60px;
+}
+
+.content h2 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}

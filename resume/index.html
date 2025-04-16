@@ -3,30 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <title>나의 이력서</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <a href="#education">학력</a>
-  <a href="#skills">기술</a>
-  <a href="#experience">경력</a>
-</nav>
+<div class="container">
+  <nav class="sidebar">
+    <h2>메뉴</h2>
+    <ul>
+      <li><a href="#basic-info">기본 정보</a></li>
+      <li><a href="#skills">기술 스택</a></li>
+      <li><a href="#experience">경험</a></li>
+      <li><a href="#portfolio">포트폴리오</a></li>
+    </ul>
+  </nav>
 
-<section id="education">
-  <h2>학력</h2>
-  <p>서울대학교 컴퓨터공학과 졸업</p>
-</section>
+  <div class="content">
+    <section id="basic-info">
+      <h2>기본 정보</h2>
+      <p>이름: 정현오<br>
+         전공: 컴퓨터소프트웨어공학과<br>
+         관심 분야: 스포츠 산업 개발, 후디니, 아두이노, 리눅스 개발</p>
+    </section>
 
-<section id="skills">
-  <h2>기술</h2>
-  <p>HTML, CSS, JavaScript, React</p>
-</section>
+    <section id="skills">
+      <h2>기술 스택</h2>
+      <p>React Native, JavaScript, Python, Linux, Arduino, Houdini, TouchDesigner</p>
+    </section>
 
-<section id="experience">
-  <h2>경력</h2>
-  <p>OOO 회사에서 프론트엔드 개발 (2022~2024)</p>
-</section>
+    <section id="experience">
+      <h2>경험</h2>
+      <p>- 리액트 네이티브 기반 식물 관리 앱 개발<br>
+         - 후디니로 3D 시뮬레이션 및 렌더링<br>
+         - 아두이노로 EMP 기기 개발 실험</p>
+    </section>
+
+    <section id="portfolio">
+      <h2>포트폴리오</h2>
+      <p>
+        <a href="https://github.com/yourusername/plant-app">식물 관리 앱 (GitHub)</a><br>
+        <a href="https://yourusername.github.io/houdini-showcase">Houdini 작품 모음</a>
+      </p>
+    </section>
+  </div>
+</div>
 
 </body>
 </html>
