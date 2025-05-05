@@ -1,179 +1,452 @@
-<link rel="stylesheet" href="index.css">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jung Hyeon O - FX 아티스트 이력서</title>
+  <style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<div class="container">
-  <div class="header">
-    <div class="full-name">
-      <span class="first-name">Jung</span> 
-      <span class="last-name">hyeon o</span>
-    </div>
-    <div class="contact-info">
-      <span class="email">이메일: </span>
-      <span class="email-val">ggimgim244@gmail.com</span>
-      <span class="separator"></span>
-      <span class="phone">전화: </span>
-      <span class="phone-val">010 -9916-6082</span>
-    </div>
+    html {
+      height: 100%;
+    }
+
+    body {
+      min-height: 100%;
+      background: #eee;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      color: #222;
+      font-size: 14px;
+      line-height: 26px;
+      padding-bottom: 50px;
+    }
+
+    .container {
+      max-width: 700px;
+      background: #fff;
+      margin: 0px auto 0px;
+      box-shadow: 1px 1px 2px #DAD7D7;
+      border-radius: 3px;
+      padding: 40px;
+      margin-top: 50px;
+    }
+
+    .header {
+      margin-bottom: 30px;
+    }
+
+    .full-name {
+      font-size: 40px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .first-name {
+      font-weight: 700;
+    }
+
+    .last-name {
+      font-weight: 300;
+    }
+
+    .contact-info {
+      margin-bottom: 20px;
+    }
+
+    .email,
+    .phone {
+      color: #999;
+      font-weight: 300;
+    }
+
+    .separator {
+      height: 10px;
+      display: inline-block;
+      border-left: 2px solid #999;
+      margin: 0px 10px;
+    }
+
+    .position {
+      font-weight: bold;
+      display: inline-block;
+      margin-right: 10px;
+      text-decoration: underline;
+    }
+
+    .details {
+      line-height: 20px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0px;
+    }
+
+    .section__title {
+      letter-spacing: 6px;
+      color: #ec7412;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .section__list-item {
+      margin-bottom: 48px;
+    }
+
+    .section__list-item .right {
+      bottom: 2px;
+    }
+
+    .section__list-item:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .left,
+    .right {
+      vertical-align: top;
+      display: inline-block;
+    }
+
+    .left {
+      width: 60%;
+    }
+
+    .right {
+      text-align: right;
+      width: 39%;
+    }
+
+    .name {
+      font-weight: 600;
+      
+      margin-top: 13px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+      font-style: italic;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #000;
+    }
+
+    /* 기술 카테고리 이름 스타일 */
+    .category-name {
+      display: inline-block;
+      background-color: #ec7412;
+      color: #ffffff;
+      padding: 5px 20px;
+      border-radius: 60px;
+      font-weight: bold;
+      margin-bottom: 19px;
+      font-size: 13px;
+    }
+
+    /* 기술 숙련도 바 스타일 */
+    .skills__item {
+      margin-bottom: 8px;
+    }
     
-    <div class="about">
-      <span class="position">FX 아티스트 지망생</span>
-      <span class="desc">
-        저는 FX 아티스트를 준비하고 있는 취업 준비생입니다. <br> 
-        터치디자이너를 활용한 파티클 시뮬레이션 작업을 시작으로, 현재는 후디니를 통해 procedural modeling부터 FX 전반을 공부하고 있습니다. <br>
-        물 시뮬레이션, 건물 붕괴 및 폭파 효과에 흥미를 가지고 있으며, 사실적인 시뮬레이션을 구현하는 데에 큰 열정을 가지고 있습니다.
-      </span>
+
+    .skills__item .right {
+      display: flex;
+      justify-content: flex-end;  /* 오른쪽으로 정렬 */
+      align-items: center;        /* 수직 정렬 */
+      margin-top: -1px;
+      margin-left: 12px;
+      width: 100%;                /* 부모 요소의 너비를 100%로 설정 */
+    }
+
+    .skills__item input {
+      visibility: hidden;  /* 체크박스 숨기기 */
+      margin-left: 17px;   /* 체크박스 간 간격 조정 */
+    }
+
+
+    .skills__item label {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background: #f8bc8b;
+      border-radius: 10px;
+      margin-right: 3px;
+      padding-bottom: 22px;
+    }
+
+    .skills__item input:checked + label {
+      background: #ec7412;
+    }
+
+    .skills__item .name{
+      font-size: 18px;
+    }
+
+    /* 슬라이더 영역 */
+    .image-slider {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .slides {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .slide-container {
+      display: flex;
+      width: fit-content;
+    }
+
+    .slider {
+      width: 600px;
+      height: auto;
+      right: 362px;
+      
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    .slide {
+      flex: 0 10 1000%;
+      height: auto;
+      margin-right: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .slide img,
+    .slide video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide:last-child {
+      margin-right: 0;
+    }
+
+    .skill-icon {
+       width: 33px;
+       height: 33px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+
+    /* 반응형 대응 */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      .left {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+
+      
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="full-name">
+        <span class="first-name">Jung</span> 
+        <span class="last-name">Hyeon O</span>
+      </div>
+      <div class="contact-info">
+        <span class="email">이메일: </span>
+        <span class="email-val">ggimgim244@gmail.com</span>
+        <span class="separator"></span>
+        <span class="phone">전화: </span>
+        <span class="phone-val">010 - 9916 - 6082</span>
+      </div>
+      <div class="about">
+        <span class="position">FX 파트</span>
+        <span class="desc"><br>
+          저는 FX 아티스트를 준비하고 있는 취업 준비생입니다. <br> 
+          터치디자이너를 활용한 파티클 시뮬레이션 작업을 시작으로, 현재는 후디니를 통해 procedural modeling부터 FX 전반을 공부하고 있습니다.<br>
+          물 시뮬레이션, 건물 붕괴 및 폭파 효과에 흥미를 가지고 있으며, 사실적인 시뮬레이션을 구현하는 데에 큰 열정을 가지고 있습니다.
+        </span>
+      </div>
+    </div>
+
+    <div class="details">
+      <div class="section">
+        <div class="section__title">개인작업</div>
+        <div class="section__list">
+          <div class="section__list-item">
+            <div class="left">
+            </div>
+            <div class="right">
+              
+              <div class="desc"></div>
+              <div class="slider">
+                
+                <div class="slider-wrapper" id="sliderWrapper">
+                  
+                  <div class="slide"><video src="img/video3.mp4" autoplay loop muted></video></div>
+                  <div class="slide"><video src="img/video1.mp4"autoplay loop muted></video></div>
+                  <div class="slide"><video src="img/video2.mp4" autoplay loop muted></video></div>
+                  <div class="slide"><img src="img/img1.jpg" alt=""></div>
+                  <div class="slide"><img src="img/img2.jpg" alt=""></div>
+                </div>
+                
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="section">
+        <div class="section__title">학력</div>
+        <div class="section__list">
+          <div class="section__list-item">
+            <div class="left">
+              <div class="name">동양미래대학교</div>
+              <div class="addr">서울, 대한민국</div>
+              <div class="duration">2023년 3월 - 2026년 2월 졸업예정</div>
+            </div>
+            <div class="right">
+              <div class="name">컴퓨터소프트웨어공학과</div>
+              <div class="desc">프로그래밍 및 소프트웨어<br> 기반 지식 학습</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section__title">프로젝트</div> 
+        <div class="section__list">
+          <div class="section__list-item">
+            <div class="name">Sprout</div>
+            <div class="text">졸업작품으로 제작한 식물 성장 관리 앱으로, 사용자가 다양한 조건을 입력하여 식물을 탐색할 수 있는 기능을 구현했습니다. (FX와 직접적인 관련은 없지만 기획 및 구현 경험이 담긴 프로젝트입니다.)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section__title">기술 / 숙련도</div>
+      
+        <div class="section__list">
+      
+          <div class="section__list-item">
+            <div class="category-name">3D Tool</div>
+            <div class="skills__item">
+              <div class="name"><img src="img/houdini.png" alt="Houdini Logo" class="skill-icon"> Houdini</div>
+
+              <div class="right">
+                <input id="houdini-ck1" type="checkbox" checked><label for="houdini-ck1" title="기초"></label>
+                <input id="houdini-ck2" type="checkbox" checked><label for="houdini-ck2" title="중급"></label>
+                <input id="houdini-ck3" type="checkbox"><label for="houdini-ck3" title="상급"></label>
+                <input id="houdini-ck4" type="checkbox"><label for="houdini-ck4" title="고급"></label>
+                <input id="houdini-ck5" type="checkbox"><label for="houdini-ck5" title="전문가"></label>
+              </div>
+            </div>
+      
+            <div class="skills__item">
+              <div class="name"><img src="img/maya.png" alt="maya Logo" class="skill-icon"> Maya</div>
+
+              <div class="right">
+                <input id="maya-ck1" type="checkbox" checked><label for="maya-ck1" title="기초"></label>
+                <input id="maya-ck2" type="checkbox" checked><label for="maya-ck2" title="중급"></label>
+                <input id="maya-ck3" type="checkbox"><label for="maya-ck3" title="상급"></label>
+                <input id="maya-ck4" type="checkbox"><label for="maya-ck4" title="고급"></label>
+                <input id="maya-ck5" type="checkbox"><label for="maya-ck5" title="전문가"></label>
+              </div>
+            </div>
+          </div>
+      
+          <div class="section__list-item">
+            <div class="category-name">Renderer</div>
+            <div class="skills__item">
+              <div class="name"><img src="img/vray.png" alt="vray Logo" class="skill-icon"> Vray</div>
+
+              <div class="right">
+                <input id="vray-ck1" type="checkbox" checked><label for="vray-ck1" title="기초"></label>
+                <input id="vray-ck2" type="checkbox" checked><label for="vray-ck2" title="중급"></label>
+                <input id="vray-ck3" type="checkbox"><label for="vray-ck3" title="상급"></label>
+                <input id="vray-ck4" type="checkbox"><label for="vray-ck4" title="고급"></label>
+                <input id="vray-ck5" type="checkbox"><label for="vray-ck5" title="전문가"></label>
+              </div>
+            </div>
+          </div>
+      
+          <div class="section__list-item">
+            <div class="category-name">Composite Tool</div>
+            <div class="skills__item">
+              <div class="name"><img src="img/nuke.png" alt="nuke Logo" class="skill-icon"> Nuke</div>
+
+              <div class="right">
+                <input id="nuke-ck1" type="checkbox" checked><label for="nuke-ck1" title="기초"></label>
+                <input id="nuke-ck2" type="checkbox" checked><label for="nuke-ck2" title="중급"></label>
+                <input id="nuke-ck3" type="checkbox"><label for="nuke-ck3" title="상급"></label>
+                <input id="nuke-ck4" type="checkbox"><label for="nuke-ck4" title="고급"></label>
+                <input id="nuke-ck5" type="checkbox"><label for="nuke-ck5" title="전문가"></label>
+              </div>
+            </div>
+          </div>
+      
+          <div class="section__list-item">
+            <div class="category-name">Real-time Tool</div>
+            <div class="skills__item">
+              <div class="name"><img src="img/td.png" alt="td Logo" class="skill-icon"> TouchDesigner</div>
+
+              <div class="right">
+                <input id="touch-ck1" type="checkbox" checked><label for="touch-ck1" title="기초"></label>
+                <input id="touch-ck2" type="checkbox" checked><label for="touch-ck2" title="중급"></label>
+                <input id="touch-ck3" type="checkbox" checked><label for="touch-ck3" title="상급"></label>
+                <input id="touch-ck4" type="checkbox"><label for="touch-ck4" title="고급"></label>
+                <input id="touch-ck5" type="checkbox"><label for="touch-ck5" title="전문가"></label>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      
+
+      <div class="section">
+        <div class="section__title">관심사</div>
+        <div class="section__list">
+          <div class="section__list-item">
+            물 시뮬레이션, 건물 붕괴, 포인트 클라우드, 프로시듀럴 모델링, 시각 효과
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="details">
-    <div class="section">
-      <div class="section__title">경력</div>
-      <div class="section__list">
-        <div class="section__list-item">
-          <div class="left">
-            <div class="name">-</div>
-            <div class="addr">-</div>
-            <div class="duration">-</div>
-          </div>
-          <div class="right">
-            <div class="name">-</div>
-            <div class="desc">아직 실무 경력은 없습니다.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="section">
-      <div class="section__title">학력</div>
-      <div class="section__list">
-        <div class="section__list-item">
-          <div class="left">
-            <div class="name">동양미래대학교</div>
-            <div class="addr">서울, 대한민국</div>
-            <div class="duration">2023년 3월 - 2026년 2월 졸업예정</div>
-          </div>
-          <div class="right">
-            <div class="name">컴퓨터소프트웨어공학과</div>
-            <div class="desc">프로그래밍 및 소프트웨어 개발 기반 지식 학습</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="section">
-      <div class="section__title">프로젝트</div> 
-      <div class="section__list">
-        <div class="section__list-item">
-          <div class="name">Sprout</div>
-          <div class="text">졸업작품으로 제작한 식물 성장 관리 앱으로, 사용자가 다양한 조건을 입력하여 식물을 탐색할 수 있는 기능을 구현했습니다. (FX와 직접적인 관련은 없지만 기획 및 구현 경험이 담긴 프로젝트입니다.)</div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="section">
-      <div class="section__title">기술</div>
-      <div class="skills">
 
-        <div class="skills__item">
-          <div class="left"><div class="name">
-            Maya
-          </div></div>
-          <div class="right">
-            <input id="ck1" type="checkbox" checked/>
-            <label for="ck1"></label>
-            <input id="ck2" type="checkbox" checked/>
-            <label for="ck2"></label>
-            <input id="ck3" type="checkbox" />
-            <label for="ck3"></label>
-            <input id="ck4" type="checkbox" />
-            <label for="ck4"></label>
-            <input id="ck5" type="checkbox" />
-            <label for="ck5"></label>
-          </div>
-        </div>
+  
 
-        <div class="skills__item">
-          <div class="left"><div class="name">
-            TouchDesigner
-          </div></div>
-          <div class="right">
-            <input id="ck1" type="checkbox" checked/>
-            <label for="ck1"></label>
-            <input id="ck2" type="checkbox" checked/>
-            <label for="ck2"></label>
-            <input id="ck3" type="checkbox" checked/>
-            <label for="ck3"></label>
-            <input id="ck4" type="checkbox" />
-            <label for="ck4"></label>
-            <input id="ck5" type="checkbox" />
-            <label for="ck5"></label>
-          </div>
-        </div>
-        
-        <div class="skills__item">
-          <div class="left"><div class="name">
-            Houdini
-          </div></div>
-          <div class="right">
-            <input id="ck1" type="checkbox" checked/>
-            <label for="ck1"></label>
-            <input id="ck2" type="checkbox" checked/>
-            <label for="ck2"></label>
-            <input id="ck3" type="checkbox" checked/>
-            <label for="ck3"></label>
-            <input id="ck4" type="checkbox" />
-            <label for="ck4"></label>
-            <input id="ck5" type="checkbox" />
-            <label for="ck5"></label>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="skills__item">
-      <div class="left"><div class="name">
-        Nuke
-      </div></div>
-      <div class="right">
-        <input id="ck1" type="checkbox" checked/>
-        <label for="ck1"></label>
-        <input id="ck2" type="checkbox" checked/>
-        <label for="ck2"></label>
-        <input id="ck3" type="checkbox" />
-        <label for="ck3"></label>
-        <input id="ck4" type="checkbox" />
-        <label for="ck4"></label>
-        <input id="ck5" type="checkbox" />
-        <label for="ck5"></label>
-      </div>
-    </div>
+</body>
+</html> 
 
-    <div class="skills__item">
-      <div class="left"><div class="name">
-        Vray-6
-      </div></div>
-      <div class="right">
-        <input id="ck1" type="checkbox" checked/>
-        <label for="ck1"></label>
-        <input id="ck2" type="checkbox" checked/>
-        <label for="ck2"></label>
-        <input id="ck3" type="checkbox" />
-        <label for="ck3"></label>
-        <input id="ck4" type="checkbox" />
-        <label for="ck4"></label>
-        <input id="ck5" type="checkbox" />
-        <label for="ck5"></label>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section__title">
-        관심사
-      </div>
-      <div class="section__list">
-        <div class="section__list-item">
-          물 시뮬레이션, 건물 붕괴, 폭파 시뮬레이션, 프로시저럴 모델링, 시각 효과
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
