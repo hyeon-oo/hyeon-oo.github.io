@@ -35,6 +35,8 @@
         <span class="position">FX 파트</span>
         <span class="desc"><br>
           저는 FX 아티스트를 준비하고 있는 취업 준비생입니다. <br> 
+          마야와 브이레이로 처음 3D를 알게되었고, 
+          씬 라이팅작업을 통해 저의 CG분야의 열정을 확인하게 되었습니다. <br>
           터치디자이너를 활용한 파티클 시뮬레이션 작업을 시작으로, 현재는 후디니를 통해 procedural modeling부터 FX 전반을 공부하고 있습니다.<br>
           물 시뮬레이션, 건물 붕괴 및 폭파 효과에 흥미를 가지고 있으며, 사실적인 시뮬레이션을 구현하는 데에 큰 열정을 가지고 있습니다.
         </span>
@@ -90,6 +92,22 @@
 
       <div class="section">
         <div class="section__title">프로젝트</div> 
+        <div class="section__list-item">
+          <div class="name">Scene Lighting</div>
+          <div class="text">느와르 장르의 무드를 보고 영감을 받아 Maya, Vray로 씬을 구성하고, Nuke로 컴포지팅하였습니다.</div>
+          <div class="image-gallery">
+            <div class="image-item">
+              <img src="img/scene1.png" alt="Scene Lighting 1">
+              <div class="description">리빙룸 씬의 조명 연출</div>
+            </div>
+            <div class="image-item">
+              <img src="img/scene2.png" alt="Scene Lighting 2">
+              <div class="description">작업 공정</div>
+            </div>
+          </div>
+        </div>
+        
+
         <div class="section__list">
           <div class="section__list-item">
             <div class="name">Sprout</div>
@@ -199,7 +217,14 @@
     </div>
   </div>
   
-
+  <script>
+    document.querySelectorAll('.image-item img').forEach(img => {
+      img.addEventListener('click', function () {
+        this.classList.toggle('fullscreen');
+      });
+    });
+  </script>
+  
 
 
 
